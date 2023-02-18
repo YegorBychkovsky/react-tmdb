@@ -1,0 +1,50 @@
+.moviePage {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+
+  .moviePageNav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    div {
+      display: flex;
+      gap: 30px;
+      padding: 15px;
+      span {
+        padding-top: 5px;
+        margin-left: -20px;
+        font-size: 9px;
+      }
+    }
+  }
+  .content {
+    width: 100%;
+    height: 510px;
+    position: relative;
+    .background {
+      display: flex;
+
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        to right,
+        rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px),
+        rgba(31.5, 31.5, 31.5, 0.84) 30%,
+        rgba(31.5, 31.5, 31.5, 0.84) 100%
+      );
+      .mainImg {
+        width: 300px;
+        height: 450px;
+        margin-top: 30px;
+        margin-left: 6.2%;
+        border-radius: 10px;
+        box-sizing: border-box;
+        img {
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}

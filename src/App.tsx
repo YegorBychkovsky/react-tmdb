@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import './scss/libs/app.scss';
+import { MainLayout } from './layouts/MainLayout';
+import '@fontsource/roboto/400.css';
+import Home from './pages/Home';
+import MoviePage from './pages/MoviePage/index';
+import TvPage from './pages/TvPage';
+import SearchPage from './pages/SearchPage/index';
+
+console.warn(process.env);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route path="" element={<Home />} />
+        <Route path="/movie/:movieId" element={<MoviePage />} />
+        <Route path="/tv/:tvId" element={<TvPage />} />
+        <Route path="/search" element={<SearchPage />} />
+      </Route>
+    </Routes>
   );
 }
 

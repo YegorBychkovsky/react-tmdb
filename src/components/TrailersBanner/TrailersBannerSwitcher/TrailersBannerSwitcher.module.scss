@@ -1,0 +1,40 @@
+.switcher {
+  display: flex;
+  gap: 50px;
+  padding: 7px 20px;
+  position: relative;
+  border-radius: 20px;
+
+  font-weight: 600;
+
+  border: 1px solid rgba(30, 213, 169, 1);
+
+  transition: left 0.25s;
+  cursor: pointer;
+
+  .leftSwitcher {
+    z-index: 1;
+  }
+  .leftSwitcherActive {
+    color: #042541;
+    z-index: 1;
+  }
+  .rightSwitcher {
+    z-index: 1;
+  }
+  .rightSwitcherActive {
+    color: #042541;
+
+    z-index: 1;
+  }
+  .spanBackGround {
+    position: absolute;
+    // transition: left 0.5s;
+    top: 0px;
+    height: 100%;
+    width: 80px;
+    border-radius: 30px;
+    background: linear-gradient(to right, rgba(192, 254, 207, 1) 0%, rgba(30, 213, 169, 1) 100%);
+    z-index: 0;
+  }
+}

@@ -1,0 +1,46 @@
+.spanSwitch {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid #042541;
+  // color: white;
+  border-radius: 20px;
+  padding: 7px 15px;
+  font-weight: 600;
+  z-index: 99;
+  cursor: pointer;
+}
+.spanFirstCase {
+  margin-right: 50px;
+  z-index: 1;
+}
+.spanSecondCase {
+  z-index: 1;
+}
+.firstCaseActive {
+  background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-right: 50px;
+  z-index: 1;
+}
+
+.secondCaseActive {
+  background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  z-index: 1;
+}
+
+.spanBackGround {
+  position: absolute;
+  margin-left: 30px;
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: #042541;
+  display: inline-block;
+  z-index: 0;
+}

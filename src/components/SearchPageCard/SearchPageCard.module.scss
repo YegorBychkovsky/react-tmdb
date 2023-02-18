@@ -1,0 +1,24 @@
+.card {
+  display: flex;
+  height: 141px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  border: 1px solid rgba(186, 186, 186, 0.314);
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  .content {
+    margin-left: 15px;
+    h2 {
+      font-weight: 600;
+      font-size: 18px;
+      margin-top: 20px;
+      color: black;
+    }
+    .cardDate {
+      opacity: 0.3;
+    }
+    .cardText {
+    }
+  }
+}

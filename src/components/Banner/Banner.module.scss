@@ -1,0 +1,42 @@
+.banner {
+  box-sizing: border-box;
+  width: 86%;
+  text-align: left;
+  height: 335px;
+  // margin-top: -335px;
+  margin-left: 100px;
+  padding-left: 40px;
+  padding-top: 73px;
+
+  background-image: linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%),
+    url('https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/7VrRna8S3x6xbijooeBmxqvHXiu.jpg');
+  background-size: cover;
+
+  color: white;
+
+  h1 {
+    font-size: 48px;
+    line-height: 60px;
+  }
+  h2 {
+    font-size: 33px;
+    font-weight: 400;
+  }
+
+  .searchInput {
+    margin-top: 45px;
+
+    width: 94%;
+    padding: 16px 18px;
+
+    margin-right: -100px;
+    // padding-top: 15px;
+    // padding-left: 17px;
+    border-radius: 30px;
+
+    &::placeholder {
+      font-size: 17px;
+      font-weight: 200;
+    }
+  }
+}
