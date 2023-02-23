@@ -85,4 +85,10 @@ export const { addTrailers } = trailersSlice.actions;
 
 export default trailersSlice.reducer;
 
+// https://newsdata.io/api/1/news?apikey=pub_1748209840e2c0162bbb55422329b500dc1a4&country=ua
+// https://newsdata.io/api/1/news?apikey=pub_1748209840e2c0162bbb55422329b500dc1a4/country=ua
+// https://newsdata.io/api/1/news?api_key=pub_1748209840e2c0162bbb55422329b500dc1a4/country=ua
+// https://newsdata.io/api/1/news?country=ua&api_key=pub_1748209840e2c0162bbb55422329b500dc1a4
+// https://newsdata.io/api/1/news?/country=ua&api_key=pub_1748209840e2c0162bbb55422329b500dc1a4
+
 export const trailersSelect = (state: RootState) => state.trailerBannerSlice.trailers.results;

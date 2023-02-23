@@ -1,24 +1,15 @@
+import { Button } from '@mui/material';
+import { Stack } from '@mui/system';
+import { useGoogleLogin, googleLogout } from '@react-oauth/google';
 import axios from 'axios';
+import { deleteDoc, doc, addDoc, collection, query, orderBy, getDocs } from 'firebase/firestore';
 import React from 'react';
-import Banner from '../components/Banner';
-import Movies from '../components/Movies';
-import Section from '../components/Section';
-import { CredentialResponse, GoogleLogin, googleLogout, useGoogleLogin } from '@react-oauth/google';
-import { async } from '@firebase/util';
-import {
-  addDoc,
-  collection,
-  deleteDoc,
-  doc,
-  getDocs,
-  orderBy,
-  query,
-  where,
-} from 'firebase/firestore';
-import { db } from '../firebase';
-import GoogleAuth from '../components/GoogleAuth';
+import { useNavigate } from 'react-router-dom';
+import { db } from '../../firebase';
 
-const Home = () => {
+const GoogleAuth = () => {
+  const navigate = useNavigate();
+
   const [accessToken, setAccessToken] = React.useState<any>();
   const [profile, setProfile] = React.useState<any>(null);
 
@@ -53,13 +44,6 @@ const Home = () => {
     googleLogout();
     setProfile(null);
   };
-
-  const [firstImg, setFirstImg] = React.useState(
-    'https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/7VrRna8S3x6xbijooeBmxqvHXiu.jpg',
-  );
-  const [secondImg, setSecondImg] = React.useState(
-    'https://image.tmdb.org/t/p/w1920_and_h600_multi_faces/rGbRnRvkmrSub07ty89Vnlsh6UX.jpg',
-  );
 
   const [text, setText] = React.useState('');
   const [movies, setMovies] = React.useState<any[]>([]);
@@ -96,17 +80,44 @@ const Home = () => {
   React.useEffect(() => {
     profile && fetchAdd();
   }, [profile]);
+  console.log(profile);
 
   return (
-    <main>
-      <Banner
-        h1={'Welcome.'}
-        h2={'Millions of movies, TV shows and people to discover. Explore now.'}
-      />
-      <Banner img={secondImg} h1={`THAT'S A WRAP 2022`} h2={'The best (and worst) from 2022.'} />
-      <Section />
-      <GoogleAuth />
-    </main>
+    <div>
+      {profile ? (
+        <div>
+          <Stack sx={{ marginTop: '-5px' }} spacing={2} direction="row">
+            <Button onClick={() => navigate('/profile')} variant="contained">
+              {profile.given_name}
+            </Button>
+          </Stack>
+        </div>
+      ) : (
+        // <div style={{ marginLeft: '200px' }}>
+        //   <img src={profile.picture} alt="user image" />
+        //   <h3>User Logged in</h3>
+        //   <p>Name: {profile.name}</p>
+        //   <p>Email Address: {profile.email}</p>
+        //   <br />
+        //   <br />
+        //   <button onClick={logOut}>Log out</button>
+        //   <br />
+        //   <input type="text" value={text} onChange={handleChangeText} />
+        //   <button onClick={handleAddMovie}>Add</button>
+        //   <br />
+        //   {movies.map((movie) => (
+        //     <div key={movie.id}>
+        //       {movie.text}
+        //       <button type="button" onClick={() => handleDeleteMovie(movie.id)}>
+        //         X
+        //       </button>
+        //     </div>
+        //   ))}
+        //   <br />
+        // </div>
+        <button onClick={() => login()}>Sign in with Google 🚀 </button>
+      )}
+    </div>
   );
 };
-export default Home;
+export default GoogleAuth;

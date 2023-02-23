@@ -20,7 +20,7 @@ export const NavItemsLeft: NavBarUlItems = [
 export const NavItemsRight: NavBarUlItems = [
   { name: 'plus', type: 'icon' },
   { name: 'EN', type: 'language' },
-  { name: 'Login', type: 'text' },
+  { name: 'Login', type: 'login' },
   { name: 'Join TMDB', type: 'text' },
   { name: 'search', type: 'icon' },
 ];
